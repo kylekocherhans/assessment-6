@@ -21,16 +21,19 @@ test('title shows up when page loads', async () => {
 
 test('choices div shows up when Draw button clicked', async () => {
     await driver.findElement(By.id('draw')).click();
-    await driver.sleep(2000);
+    
     const choicesDiv = await driver.findElement(By.id('choices'));
-
     const displayed = await choicesDiv.isDisplayed();
+
     expect(displayed).toBe(true);
 });
 
-// test('player-duo div shows up when Add to Duo button clicked', async () => {
-//     const addToDuoBtn = await driver.findElement(By.xpath("//*[text()='Add to Duo']"));
+test('player-duo div shows up when Add to Duo button clicked', async () => {
+    await driver.findElement(By.id('draw')).click();
+    await driver.findElement(By.css(".bot-btn")).click();
 
-//     const displayed = await addToDuoBtn.isDisplayed();
-//     expect(displayed).toBe(true);
-// });
+    const playerDuoDiv = await driver.findElement(By.id('choices'));
+    const displayed = await playerDuoDiv.isDisplayed();
+
+    expect(displayed).toBe(true);
+});
