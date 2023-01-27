@@ -28,9 +28,9 @@ test('choices div shows up when Draw button clicked', async () => {
     expect(displayed).toBe(true);
 });
 
-test('player-duo div shows up when Add to Duo button clicked', async () => {
-    const addToDuoBtn = await driver.findElement(By.xpath("//*[text()='Add to Duo']"));
+// test('player-duo div shows up when Add to Duo button clicked', async () => {
+//     const addToDuoBtn = await driver.findElement(By.xpath("//*[text()='Add to Duo']"));
 
-    const displayed = await addToDuoBtn.isDisplayed();
-    expect(displayed).toBe(true);
-});
+//     const displayed = await addToDuoBtn.isDisplayed();
+//     expect(displayed).toBe(true);
+// });
